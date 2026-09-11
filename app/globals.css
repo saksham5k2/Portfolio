@@ -1370,13 +1370,14 @@ html[data-theme="light"] .theme-toggle { color: #263a2b; }
     bottom: 78px;
   }
   .twin-response {
-    top: 55px;
+    top: 68px;
     right: 15px;
     left: 15px;
     bottom: auto;
     width: auto;
     max-height: 210px;
   }
+  .twin-chat-name { display: none; }
   .twin-message-list {
     flex: none;
     max-height: 185px;
