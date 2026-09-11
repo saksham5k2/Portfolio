@@ -124,6 +124,21 @@ const skillGroups = [
   ],
 ];
 
+const certifications = [
+  {
+    title: "AI Engineer Core Track: LLM Engineering, RAG, QLoRA, Agents",
+    image: "/certificates/llm-engineering.jpg",
+  },
+  {
+    title: "AI Engineer Agentic Track: The Complete Agent & MCP Course",
+    image: "/certificates/agentic.jpg",
+  },
+  {
+    title: "DevOps Certificate",
+    image: "/certificates/devops.jpg",
+  },
+];
+
 function formatInline(text: string) {
   return text.split(/(\*\*[^*]+\*\*|`[^`]+`)/g).map((part, index) => {
     if (part.startsWith("**") && part.endsWith("**")) {
@@ -225,7 +240,7 @@ function DigitalTwin() {
   const [responses, setResponses] = useState([
     { id: 1, text: "Hi, I’m Saksham’s AI twin." },
   ]);
-  const chatEndRef = useRef<HTMLDivElement>(null);
+  const messageListRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const waveTimer = window.setTimeout(() => setGesture("wave"), 550);
@@ -244,7 +259,9 @@ function DigitalTwin() {
   }, []);
 
   useEffect(() => {
-    chatEndRef.current?.scrollIntoView({ behavior: "smooth", block: "end" });
+    const messageList = messageListRef.current;
+    if (!messageList) return;
+    messageList.scrollTo({ top: messageList.scrollHeight, behavior: "smooth" });
   }, [responses, isThinking]);
 
   useEffect(() => {
@@ -478,7 +495,7 @@ function DigitalTwin() {
       </div>
       <div className="twin-response" aria-live="polite">
         <span className="twin-chat-name"><Sparkles size={12} /> DIGITAL TWIN</span>
-        <div className="twin-message-list">
+        <div className="twin-message-list" ref={messageListRef}>
           {responses.map((response) => (
             <div className="twin-message" key={response.id}>
               <div className="twin-message-content">{formatResponse(response.text)}</div>
@@ -490,7 +507,6 @@ function DigitalTwin() {
               <p><span className="thinking-dot" /> Thinking…</p>
             </div>
           )}
-          <div ref={chatEndRef} />
         </div>
       </div>
       <form className="twin-input" onSubmit={previewResponse}><input value={message} onChange={(event) => setMessage(event.target.value)} placeholder={isCollectingEmail ? "Your email and message…" : "Ask Saksham’s twin…"} aria-label="Message Saksham's digital twin" /><button type="submit" aria-label="Send message" disabled={!message.trim() || isTalking || isThinking}><Send size={15} /></button></form>
@@ -853,9 +869,29 @@ export default function Home() {
         </div>
       </section>
 
+      <section id="certifications" className="certifications">
+        <div className="shell">
+          <div className="section-head certifications-heading">
+            <p className="section-label">04 / CERTIFICATIONS</p>
+            <h2>
+              Learning with
+              <br />
+              <em>intent.</em>
+            </h2>
+          </div>
+          <div className="certificate-grid">
+            {[...certifications, ...certifications].map((certificate, index) => (
+              <figure className="certificate-card" key={`${certificate.title}-${index}`} aria-hidden={index >= certifications.length}>
+                <img src={certificate.image} alt={certificate.title} />
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section id="contact" className="contact">
         <div className="shell contact-content">
-          <p className="section-label">04 / CONTACT</p>
+          <p className="section-label">05 / CONTACT</p>
           <div className="contact-grid">
             <div>
               <h2>

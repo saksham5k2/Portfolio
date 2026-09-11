@@ -170,6 +170,9 @@ html[data-theme="light"] .contact-form textarea {
   color: #18231c;
   background: rgba(255, 255, 255, .72);
 }
+html[data-theme="light"] .certifications {
+  background: rgba(222, 234, 223, .9);
+}
 .hero {
   min-height: 680px;
   display: grid;
@@ -1139,6 +1142,36 @@ h2 em {
   color: #8c968d;
   cursor: not-allowed;
 }
+.certifications {
+  padding: 110px 0;
+  border-block: 1px solid var(--line);
+  background: rgba(13, 18, 15, .84);
+}
+.certifications-heading {
+  grid-template-columns: .5fr 1fr;
+}
+.certificate-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 58px;
+}
+.certificate-card {
+  overflow: hidden;
+  margin: 0;
+  border: 1px solid rgba(187, 242, 115, .25);
+  border-radius: 10px;
+  background: #e9eee6;
+  box-shadow: 0 16px 38px rgba(0, 0, 0, .22);
+}
+.certificate-card:nth-child(n + 4) { display: none; }
+.certificate-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform .3s ease;
+}
+.certificate-card:hover img { transform: scale(1.025); }
 .contact {
   padding: 105px 0 95px;
   background: linear-gradient(140deg, #1e3427, #0d1510);
@@ -1342,11 +1375,11 @@ html[data-theme="light"] .theme-toggle { color: #263a2b; }
     left: 15px;
     bottom: auto;
     width: auto;
-    max-height: 140px;
+    max-height: 210px;
   }
   .twin-message-list {
     flex: none;
-    max-height: 115px;
+    max-height: 185px;
   }
   .character-card {
     right: 15px;
@@ -1360,6 +1393,7 @@ html[data-theme="light"] .theme-toggle { color: #263a2b; }
   }
   .intro-section,
   .skills-section,
+  .certifications,
   .contact {
     padding-block: 75px;
   }
@@ -1374,6 +1408,9 @@ html[data-theme="light"] .theme-toggle { color: #263a2b; }
   .skill-row {
     grid-template-columns: 28px minmax(0, 1fr);
     gap: 10px;
+  }
+  .certificate-grid {
+    grid-template-columns: 1fr;
   }
   .skills-rows {
     margin-top: 40px;
