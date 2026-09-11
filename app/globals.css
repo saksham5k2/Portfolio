@@ -115,6 +115,17 @@ a {
   border: 1px solid var(--line);
   border-radius: 5px;
 }
+.nav-resume {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 12px;
+  border: 1px solid rgba(187, 242, 115, .42);
+  border-radius: 5px;
+  color: var(--lime);
+  font-size: 11px;
+  font-weight: 700;
+}
 .nav-actions {
   display: flex;
   align-items: center;
@@ -1336,6 +1347,10 @@ html[data-theme="light"] .theme-toggle { color: #263a2b; }
   .nav-cta {
     font-size: 10px;
   }
+  .nav-resume {
+    padding: 10px;
+  }
+  .nav-resume span { display: none; }
   .hero {
     display: flex;
     flex-direction: column;
