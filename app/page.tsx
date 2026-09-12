@@ -3,6 +3,7 @@
 import { FormEvent, type ReactNode, useEffect, useRef, useState } from "react";
 import CareerTwinAvatar, { AvatarGesture } from "../components/CareerTwinAvatar";
 import {
+  ArrowDown,
   ArrowDownRight,
   ArrowUpRight,
   Github,
@@ -476,7 +477,7 @@ function DigitalTwin() {
         <span className="twin-header-actions">
           <a href="tel:+919068291352" aria-label="Call Saksham at +91 90682 91352">Call</a>
           <a href="#contact">Email</a>
-          <a href="/Saksham_Sharma_AI_Engineer_Resume.pdf" download>CV</a>
+          <a href="/Saksham_Sharma_AI_LLM_Resume.pdf" download>CV</a>
         </span>
       </div>
       <div className="orb orb-one" /><div className="orb orb-two" /><div className="grid-fade" />
@@ -648,8 +649,10 @@ export default function Home() {
             <a href="#contact">Contact</a>
           </div>
           <div className="nav-actions">
-            <a className="nav-resume" href="/Saksham_Sharma_AI_Engineer_Resume.pdf" download>
-              <span>Resume</span> <ArrowDownRight size={14} />
+            <a className="nav-resume" href="/Saksham_Sharma_AI_LLM_Resume.pdf" download>
+              <span className="nav-resume-full">Resume</span>
+              <span className="nav-resume-short">CV</span>
+              <ArrowDown size={14} />
             </a>
             <button className="theme-toggle" type="button" onClick={() => setIsLightMode((current) => !current)} aria-label={isLightMode ? "Switch to dark mode" : "Switch to light mode"}>
               {isLightMode ? <Moon size={14} /> : <Sun size={14} />}

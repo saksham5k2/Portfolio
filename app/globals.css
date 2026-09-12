@@ -126,6 +126,7 @@ a {
   font-size: 11px;
   font-weight: 700;
 }
+.nav-resume-short { display: none; }
 .nav-actions {
   display: flex;
   align-items: center;
@@ -1345,12 +1346,18 @@ html[data-theme="light"] .theme-toggle { color: #263a2b; }
     display: none;
   }
   .nav-cta {
-    font-size: 10px;
+    display: none;
   }
   .nav-resume {
-    padding: 10px;
+    display: inline-flex;
+    padding: 9px;
   }
-  .nav-resume span { display: none; }
+  .nav-resume-full { display: none; }
+  .nav-resume-short { display: inline; }
+  .theme-toggle {
+    padding: 9px;
+  }
+  .theme-toggle span { display: none; }
   .hero {
     display: flex;
     flex-direction: column;
